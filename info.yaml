@@ -1,43 +1,41 @@
-yaml_version: 6
-
 project:
-  title: "8-bit Random Number Generator"
-  author: "Aishu"
-  description: "Pseudo-random number generator using an 8-bit LFSR"
-  language: "Verilog"
-  clock_hz: 1000000
-
-  tiles: "1x1"
-
-  top_module: "tt_um_aishu_rng"
-
+  title:        "PQC Key Encapsulation"
+  author:       "Aishwarya and Rishika"
+  description:  "Linear Feedback Shift Register for pseudo-random number and key generation in PQC structures."
+  language:     "Verilog"
+  clock_hz:     10000000
+  tiles:        "1x1"
+  top_module:   "tt_um_pqc_aishu"
   source_files:
     - "project.v"
 
 pinout:
-  ui[0]: "Seed bit 0"
-  ui[1]: "Seed bit 1"
-  ui[2]: "Seed bit 2"
-  ui[3]: "Seed bit 3"
-  ui[4]: "Seed bit 4"
-  ui[5]: "Seed bit 5"
-  ui[6]: "Seed bit 6"
-  ui[7]: "Seed bit 7"
+  ui[0]: "seed_in_0"
+  ui[1]: "seed_in_1"
+  ui[2]: "seed_in_2"
+  ui[3]: "seed_in_3"
+  ui[4]: "seed_in_4"
+  ui[5]: "seed_in_5"
+  ui[6]: "seed_in_6"
+  ui[7]: "seed_in_7"
+  uo[0]: "out_0"
+  uo[1]: "out_1"
+  uo[2]: "out_2"
+  uo[3]: "out_3"
+  uo[4]: "out_4"
+  uo[5]: "out_5"
+  uo[6]: "out_6"
+  uo[7]: "out_7"
+  uio[0]: "mode_sel"
+  uio[1]: "unused_1"
+  uio[2]: "unused_2"
+  uio[3]: "unused_3"
+  uio[4]: "unused_4"
+  uio[5]: "unused_5"
+  uio[6]: "unused_6"
+  uio[7]: "unused_7"
 
-  uo[0]: "Random bit 0"
-  uo[1]: "Random bit 1"
-  uo[2]: "Random bit 2"
-  uo[3]: "Random bit 3"
-  uo[4]: "Random bit 4"
-  uo[5]: "Random bit 5"
-  uo[6]: "Random bit 6"
-  uo[7]: "Random bit 7"
+how_it_works: "Implements an 8-bit maximal-period LFSR primitive for cryptographic noise masking and key generation routines."
+how_to_test:  "Assert rst_n low to load seed state. Toggle mode_sel high to inject external ui input bits into the generator register loop."
 
-  uio[0]: "Load Seed"
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+yaml_version: 6
