@@ -5,7 +5,7 @@ project:
   language:     "Verilog"
   clock_hz:     10000000
   tiles:        "1x1"
-  top_module:   "tt_um_pqc_aishu"
+  top_module:   "tt_um_pqc_rishi"
   source_files:
     - "project.v"
 
