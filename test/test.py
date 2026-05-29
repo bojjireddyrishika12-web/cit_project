@@ -1,13 +1,13 @@
 import cocotb
+from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles, RisingEdge
 
 @cocotb.test()
 async def test_project(dut):
     dut._log.info("Starting PQC RNG Testbench")
 
-    # Start the clock generator loop safely
-    # (Toggles the dut.clk signal every 50ns for a 10MHz operation frequency)
-    cocotb.start_soon(cocotb.clock.Clock(dut.clk, 100, units="ns").start())
+    # Start the clock generator loop safely using the imported Clock class
+    cocotb.start_soon(Clock(dut.clk, 100, units="ns").start())
 
     # 1. System Reset Initialization
     dut._log.info("Applying system reset...")
