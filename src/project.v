@@ -1,4 +1,4 @@
-module tt_um_aishu_rng (
+module tt_um_pqc_aishu (
     input  wire [7:0] ui_in,
     output wire [7:0] uo_out,
 
