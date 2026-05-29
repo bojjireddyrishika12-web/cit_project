@@ -1,20 +1,11 @@
-<!---
+# How it works
 
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
+This project implements an 8-bit pseudo-random number generator using a Linear Feedback Shift Register (LFSR). A seed value can be loaded through the input bus, and a new pseudo-random value is generated on every clock cycle.
 
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
+# How to test
 
-## How it works
-
-Explain how your project works
-
-## How to test
-
-Explain how to use your project
-
-## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+1. Apply reset.
+2. Load an 8-bit seed using ui_in.
+3. Set uio_in[0] high for one clock cycle.
+4. Observe uo_out changing every clock cycle.
+5. Verify that the generated sequence follows LFSR behavior.
