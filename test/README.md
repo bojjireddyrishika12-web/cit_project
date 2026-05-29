@@ -1,47 +1,30 @@
-# Sample testbench for a Tiny Tapeout project
+# 8-bit Random Number Generator
 
-This is a sample testbench for a Tiny Tapeout project. It uses [cocotb](https://docs.cocotb.org/en/stable/) to drive the DUT and check the outputs.
-See below to get started or for more information, check the [website](https://tinytapeout.com/hdl/testing/).
+## Description
 
-## Setting up
+This project implements an 8-bit pseudo-random number generator using a Linear Feedback Shift Register (LFSR).
 
-1. Edit [Makefile](Makefile) and modify `PROJECT_SOURCES` to point to your Verilog files.
-2. Edit [tb.v](tb.v) and replace `tt_um_example` with your module name.
+The generator produces a random-looking sequence of numbers on every clock cycle.
 
-## How to run
+## Inputs
 
-To run the RTL simulation:
+| Signal | Function |
+|----------|----------|
+| ui_in[7:0] | Seed Value |
+| uio_in[0] | Load Seed |
+| clk | System Clock |
+| rst_n | Active-Low Reset |
 
-```sh
-make -B
-```
+## Outputs
 
-To run gatelevel simulation, first harden your project and copy `../runs/wokwi/results/final/verilog/gl/{your_module_name}.v` to `gate_level_netlist.v`.
+| Signal | Function |
+|----------|----------|
+| uo_out[7:0] | Random Number |
 
-Then run:
+## Applications
 
-```sh
-make -B GATES=yes
-```
-
-If you wish to save the waveform in VCD format instead of FST format, edit tb.v to use `$dumpfile("tb.vcd");` and then run:
-
-```sh
-make -B FST=
-```
-
-This will generate `tb.vcd` instead of `tb.fst`.
-
-## How to view the waveform file
-
-Using GTKWave
-
-```sh
-gtkwave tb.fst tb.gtkw
-```
-
-Using Surfer
-
-```sh
-surfer tb.fst
-```
+- Cryptography
+- Hardware Testing
+- Gaming
+- Digital Communication
+- Data Scrambling
